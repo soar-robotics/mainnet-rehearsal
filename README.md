@@ -25,27 +25,21 @@ go version
 ### Download the new libwasmvm.x86_64.so:
 
 ```sh
-wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so
+wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so -O /usr/lib/libwasmvm.x86_64.so
 ```
 
-### Move the library to the appropriate directory:
-
-```sh
-sudo mv libwasmvm.x86_64.so /usr/lib/
-# OR
-sudo mv libwasmvm.x86_64.so /usr/local/lib/
-```
 ## Replace or add the new binary 
 
 First clone the mainnet-rehearsal repository 
 ```sh
-git clone git@github.com:soar-robotics/mainnet-rehearsal.git 
+cd $HOME
+git clone https://github.com/soar-robotics/mainnet-rehearsal.git 
 ```
 Move the binary for system usage 
 ```sh
-cd mainnet-rehearsal
+cd mainnet-rehearsal/binary
 tar -xvf soarchaind.tar.gz
-sudo mv soarchaind /home/user/go/bin/soarchaind
+sudo mv soarchaind /usr/local/go/bin
 ```
 
 ## Initialize the Node
@@ -53,7 +47,7 @@ sudo mv soarchaind /home/user/go/bin/soarchaind
 ### Initialize the node:
 
 ```sh
-soarchaind init --nodeName --chain-id soarchaintestnet --default-denom utsoar
+soarchaind init <nodeName> --chain-id soarchaintestnet --default-denom utsoar
 ```
 
 ### Configure the Testnet Validator Account:
@@ -71,7 +65,7 @@ Replace the binary with `pregenesis.json`. Your `genesis.json` is in the `.soarc
 ## Create Gentx:
 
 ```sh
-soarchaind genesis gentx keyName 1000000utsoar --keyring-backend test --chain-id soarchaintestnet
+soarchaind genesis gentx <keyName> 1000000utsoar --keyring-backend test --chain-id soarchaintestnet
 ```
 
 After completing these steps, validators can start sending their gentx files.
@@ -102,7 +96,7 @@ After completing these steps, validators can start sending their gentx files.
 
 4. Copy your `gentx` file to the `gentx` directory in the repository. Make sure to name the file `gentx-<your-validator-name>.json`:
    ```sh
-   cp /home/user/.soarchain/config/gentx/gentx.json network/gentxs/gentx-<your-validator-name>.json
+   cp $HOME/.soarchain/config/gentx/gentx.json network/gentxs/gentx-<your-validator-name>.json
    ```
 
 ## Commit Your Changes
@@ -162,7 +156,7 @@ For more information on the WasmVM upgrade, refer to the [WasmVM v1.5.2 release]
 
 We appreciate your cooperation in ensuring a smooth mainnet launch process. Please refactor and verify all files as needed.
 
-Make sure to replace `--nodeName` and `keyName` with the actual names you intend to use.
+Make sure to replace `<nodeName>` and `<keyName>` with the actual names you intend to use.
 
 For any questions, we are here in our social media groups.
 
