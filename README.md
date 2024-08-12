@@ -100,14 +100,14 @@ After completing these steps, validators can start sending their gentx files.
 
 4. Copy your `gentx` file to the `gentx` directory in the repository. Make sure to name the file `gentx-<your-validator-name>.json`:
    ```sh
-   cp /home/user/.soarchain/config/gentx/gentx.json gentx/gentx-<your-validator-name>.json
+   cp /home/user/.soarchain/config/gentx/gentx.json network/gentxs/gentx-<your-validator-name>.json
    ```
 
 ## Commit Your Changes
 
 5. Commit your changes with a descriptive message:
    ```sh
-   git add gentx/gentx-<your-validator-name>.json
+   git add network/gentxs/gentx-<your-validator-name>.json
    git commit -m "Add gentx for <your-validator-name>"
    ```
 
