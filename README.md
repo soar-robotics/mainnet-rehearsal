@@ -1,6 +1,8 @@
 
 # Instructions for Validators
 
+Validators testnet accounts have been reserved in pregenesis.json 
+
 ## Upgrade Go Version
 
 ### Update Go to Version 1.22.3:
