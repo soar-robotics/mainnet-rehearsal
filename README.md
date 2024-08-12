@@ -33,6 +33,18 @@ sudo mv libwasmvm.x86_64.so /usr/lib/
 # OR
 sudo mv libwasmvm.x86_64.so /usr/local/lib/
 ```
+## Replace or add the new binary 
+
+First clone the mainnet-rehearsal repository 
+```sh
+git clone git@github.com:soar-robotics/mainnet-rehearsal.git 
+```
+Move the binary for system usage 
+```sh
+cd mainnet-rehearsal
+tar -xvf soarchaind.tar.gz
+sudo mv soarchaind /home/user/go/bin/soarchaind
+```
 
 ## Initialize the Node
 
