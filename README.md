@@ -25,9 +25,16 @@ go version
 ### Download the new libwasmvm.x86_64.so:
 
 ```sh
-wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so -O /usr/lib/libwasmvm.x86_64.so
+wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so
 ```
 
+### Move the library to the appropriate directory:
+
+```sh
+sudo mv libwasmvm.x86_64.so /usr/lib/
+# OR
+sudo mv libwasmvm.x86_64.so /usr/local/lib/
+```
 ## Replace or add the new binary 
 
 First clone the mainnet-rehearsal repository 
@@ -55,7 +62,7 @@ soarchaind init <nodeName> --chain-id soarchaintestnet --default-denom utsoar
 ```sh
 soarchaind config set client chain-id soarchaintestnet
 soarchaind config set client keyring-backend test
-soarchaind keys add keyName --keyring-backend test --algo secp256k1 --recover
+soarchaind keys add <keyName> --keyring-backend test --algo secp256k1 --recover
 ```
 
 ### Replace the Genesis File:
