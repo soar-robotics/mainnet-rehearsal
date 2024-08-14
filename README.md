@@ -54,13 +54,13 @@ sudo mv soarchaind /usr/local/go/bin
 ### Initialize the node:
 
 ```sh
-soarchaind init <nodeName> --chain-id soarchaintestnet --default-denom utsoar
+soarchaind init <nodeName> --chain-id soarchaintestnet-1 --default-denom utsoar
 ```
 
 ### Configure the Testnet Validator Account:
 
 ```sh
-soarchaind config set client chain-id soarchaintestnet
+soarchaind config set client chain-id soarchaintestnet-1
 soarchaind config set client keyring-backend test
 soarchaind keys add <keyName> --keyring-backend test --algo secp256k1 --recover
 ```
@@ -72,7 +72,7 @@ Replace the binary with `pregenesis.json`. Your `genesis.json` is in the `.soarc
 ## Create Gentx:
 
 ```sh
-soarchaind genesis gentx <keyName> 1000000utsoar --keyring-backend test --chain-id soarchaintestnet
+soarchaind genesis gentx <keyName> 1000000utsoar --keyring-backend test --chain-id soarchaintestnet-1
 ```
 
 After completing these steps, validators can start sending their gentx files.
