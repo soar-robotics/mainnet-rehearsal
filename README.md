@@ -44,7 +44,7 @@ git clone https://github.com/soar-robotics/mainnet-rehearsal.git
 ```
 Move the binary for system usage 
 ```sh
-cd mainnet-rehearsal/binary
+cd mainnet-rehearsal/binary/<your_os>
 tar -xvf soarchaind.tar.gz
 sudo mv soarchaind /usr/local/go/bin
 ```
